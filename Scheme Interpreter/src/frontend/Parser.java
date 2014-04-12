@@ -44,7 +44,7 @@ public class Parser
 			{
 				openParens--;
 			}
-			else if (Character.isLetter(s.toCharArray()[0]) && !reference.schemeKeywords().contains(s)) //token is a word but not a keyword
+			else if (Character.isLetter(s.toCharArray()[0]) && !reference.getKeywords().contains(s)) //token is a word but not a keyword
 			{
 				table.add(s, null); //adds token to symbol table. attributes are null.s
 			}

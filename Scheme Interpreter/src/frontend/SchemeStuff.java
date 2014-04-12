@@ -5,12 +5,13 @@ public class SchemeStuff {
 	
 	ArrayList<String> keywords = new ArrayList<String>();
 	char[] symbols = new char[13];
+	
 		
 	/**
 	 * Returns an array of recognized Scheme keywords
 	 * @return Arraylist of Scheme keywords
 	 */
-	public ArrayList<String> schemeKeywords()
+	public ArrayList<String> getKeywords()
 	{
 		setUpKeywords();
 		return keywords;
@@ -20,7 +21,7 @@ public class SchemeStuff {
 	 * Returns an array of recognized Scheme special symbols
 	 * @return An array of Scheme special symbols
 	 */
-	public char[] schemeSymbols()
+	public char[] getSymbols()
 	{
 		setUpSymbols();
 		return symbols;

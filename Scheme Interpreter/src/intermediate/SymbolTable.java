@@ -1,5 +1,6 @@
 package intermediate;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class SymbolTable {
 
@@ -39,6 +40,12 @@ public class SymbolTable {
 	{
 		//sort table -- keys in alphabetical order
 		//system.out.println the list
+		
+		TreeSet<String> sortedKeys = new TreeSet<String>(table.keySet());
+		for (String key : sortedKeys)
+		{
+			System.out.println(key);
+		}
 	}
 	
 }

@@ -44,9 +44,21 @@ public class Parser
 			{
 				openParens--;
 			}
-			else if (Character.isLetter(s.toCharArray()[0]) && !reference.getKeywords().contains(s)) //token is a word but not a keyword
+			else if (Character.isLetter(s.toCharArray()[0]) && 
+					!reference.getKeywords().contains(s)) //token is a word but not a keyword
 			{
 				table.add(s, null); //adds token to symbol table. attributes are null.s
+			}
+			//if s is not a whitespace or a letter or a number then it must be a symbol
+			else if (!Character.isWhitespace(s.toCharArray()[0]) &&
+					!Character.isDigit(s.toCharArray()[0])) {
+				//loop through the char[] of special symbols
+				for (char c : reference.getSymbols()) {
+					//if s is not a special symbol then add it to symbol table
+					if (!s.equals(c)) {
+						table.add(s,  null);
+					}
+				}
 			}
 		}
 	}

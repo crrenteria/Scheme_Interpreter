@@ -2,9 +2,15 @@ package intermediate;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
+/**
+ * SymbolTable can not contain the following:
+ * Special Symbols, Numbers, Keywords, Characters, or Booleans
+ *
+ */
 public class SymbolTable {
 
-	//wtf too many TreeMaps. It's a TreeMap with TreeMaps inside. It maps a string (key) to a TreeMap (a map of attributes)
+	//wtf too many TreeMaps. It's a TreeMap with TreeMaps inside. 
+	//It maps a string (key) to a TreeMap (a map of attributes)
 	TreeMap<String, TreeMap<String, String>> table;
 	
 	/**

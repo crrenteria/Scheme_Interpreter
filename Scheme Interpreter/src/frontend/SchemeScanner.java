@@ -43,6 +43,8 @@ package frontend;
 				{
 					//find end of number. add number to token list 
 					while(Character.isDigit(temp.charAt(i))) {
+						if (temp.charAt(i) == '.')
+							token += temp.charAt(i);
 						token += temp.charAt(i);
 						i++;
 					}
@@ -54,7 +56,9 @@ package frontend;
 				else if (Character.isLetter(temp.charAt(i))) //next token is a word
 				{
 					//find end of word. add word to token list
-					while (Character.isLetter(temp.charAt(i))) { //Loop through the word
+					//word must start with letter, and can contain digits, - or ?
+					while (Character.isLetter(temp.charAt(i)) || temp.charAt(i) == '-'
+							|| temp.charAt(i) == '?' || Character.isDigit(temp.charAt(i))) { //Loop through the word
 						token += temp.charAt(i);
 						i++;
 					}
@@ -68,15 +72,12 @@ package frontend;
 					}
 					token = ""; //reset
 				}
+				//treat each comment and end-of-line character as blank
 				else if (temp.charAt(i) == '\n') //new line
 				{
-					//print out line. move on to the next one (i++)
-					token += temp.charAt(i);
-					tokens.add(token);
-					System.out.printf("Token: %s \t Type: Symbol\n", token); // '\n' a symbol?
 					i++;
 				}
-				else if (temp.charAt(i) == ';' ) //comment
+				else if (temp.charAt(i) == ';') //comment
 				{
 					//skip the rest of this line. move i to point to first character after comment
 					//we have to assume the comment is on its own line right?
@@ -84,14 +85,11 @@ package frontend;
 						i++;
 					}
 				}
-				else if (temp.charAt(i) == ' ' ) //whitespace
+				else if (temp.charAt(i) == ' ') //whitespace
 				{
 					i++; //move scanner forward by one space. don't do much else.
 				}
 			}
-			
-			
-			
 			return tokens;
 		}
 		

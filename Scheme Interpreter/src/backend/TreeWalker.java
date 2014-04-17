@@ -27,7 +27,7 @@ public class TreeWalker {
 	
 	public void walk(Node nd)
 	{
-		if (isEmptyNode(nd)) //empty node created because the tree builder isn't exactly great
+		if ((nd == null) || isEmptyNode(nd)) //empty node created because the tree builder isn't exactly great
 		{
 			System.out.print(")");
 			return;
@@ -40,26 +40,26 @@ public class TreeWalker {
 		else if (nd.getValue() == null && ( nd.hasLeftChild() ) && (nd.getLeftChild().hasLeftChild()))//(nd.getParent() == null) || (nd.getParent().getValue() == null))) //the current node is the beginning of a sublist
 		{
 			System.out.print("\n(");
-			if (nd.hasLeftChild()) //if there's a left child
-			{
+			//if (nd.hasLeftChild()) //if there's a left child
+			//{
 				walk(nd.getLeftChild()); //traverse left subtree
-			}
-			if (nd.hasRightChild()) //if there's a right child
-			{
+			//}
+			//if (nd.hasRightChild()) //if there's a right child
+			//{
 				walk(nd.getRightChild()); //traverse right subtree
-			}
+		//	}
 		}
 		else //just a midpoint node
 		{
-			if (nd.hasLeftChild()) //if there's a left child
-			{
+			//if (nd.hasLeftChild()) //if there's a left child
+			//{
 				walk(nd.getLeftChild()); //traverse left subtree
-			}
-			if (nd.hasRightChild()) //if there's a right child
-			{
+			//}
+			//if (nd.hasRightChild()) //if there's a right child
+			//{
 				walk(nd.getRightChild()); //traverse right subtree
-				System.out.print(")");
-			}
+				//System.out.print(")");
+			//}/
 		}
 	}
 	

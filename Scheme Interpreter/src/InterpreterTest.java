@@ -13,11 +13,11 @@ public class InterpreterTest
 	public static void main(String[] args) throws IOException
 	{
 		Parser parser = new Parser();
-		//SchemeScanner scanner = new SchemeScanner();
-		TreeWalker walker = new TreeWalker();
 		 
-		/*BufferedReader in = null;
+		BufferedReader in = null;
 		BufferedReader out = null;
+		ArrayList<String> parsed = new ArrayList<String>();
+		CodeTree tree = new CodeTree();
 		
 		try {
 			in = new BufferedReader(new FileReader("input.lisp"));
@@ -25,8 +25,11 @@ public class InterpreterTest
 			String line = null;
 
 			while ((line = in.readLine()) != null) {
-				parser.buildTokenList(line);
+				parsed = parser.buildTokenList(line);
+				
 			}
+			tree.printTree(parsed);
+			
 		} 
 		finally {
 			if (in != null) {
@@ -35,13 +38,13 @@ public class InterpreterTest
 			if (out != null) {
 				out.close();
 			}
-		}*/
+		}
 		
-		String schemeInput = "( define proc ( lambda ( a b ) ( let ( ( sum ( - a ( func b ) ) ) ) sum ) ) )";
+		/*String schemeInput = "(define proc (lambda (a b) (let ((sum (- a (func b)))) sum)))";
 		ArrayList<String> parsed = parser.buildTokenList(schemeInput);
 		
 		CodeTree tree = new CodeTree();
-		tree.printTree(parsed);
+		tree.printTree(parsed);*/
 		
 		//scanner scans
 		//parser parses

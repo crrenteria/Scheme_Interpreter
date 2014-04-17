@@ -21,7 +21,7 @@ package frontend;
 		{
 			ArrayList<String> tokens = new ArrayList<String>(); 
 			String token = ""; //Use this to construct the digit/word i.e. '123', 'proc'
-			String operands = "+ / = # * -";
+			String operands = "+/=#*-'^";
 			int i = 0; //tracks beginning of substring
 			
 			while ( i < s.length() ) //until we run out of string
@@ -87,9 +87,23 @@ package frontend;
 					i++; //move scanner forward by one space. don't do much else.
 				}
 				else if (operands.contains(String.valueOf(temp.charAt(i)))) {
-					tokens.add(String.valueOf(temp.charAt(i)));
-					System.out.printf("Token: %s \t Type: Symbol\n", String.valueOf(temp.charAt(i)));
-					i++;
+					while (temp.charAt(i) != ' ') {
+						token += temp.charAt(i);
+						i++;
+					}
+					if (token.charAt(token.length()-1) == ')') {
+						token = token.substring(0, token.length()-1);
+						tokens.add(token);
+						System.out.printf("Token: %s \t Type: Symbol\n", token);
+						tokens.add(")");
+						System.out.printf("Token: %s \t Type: Symbol\n", ")");
+					}
+					else {
+						tokens.add(token);
+						System.out.printf("Token: %s \t Type: Symbol\n", token);
+					}
+					
+					token = "";
 				}
 			}
 			return tokens;

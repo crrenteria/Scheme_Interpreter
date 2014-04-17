@@ -25,6 +25,7 @@ public class InterpreterTest
 			String line = null;
 
 			while ((line = in.readLine()) != null) {
+				System.out.println(line);
 				parsed = parser.buildTokenList(line);
 				
 			}

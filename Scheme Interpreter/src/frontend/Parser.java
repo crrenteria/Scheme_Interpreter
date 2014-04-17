@@ -26,7 +26,7 @@ public class Parser
 		table = new SymbolTable(); 
 	}
 	
-	public void buildTokenList()
+	public void buildTokenList(String input)
 	{
 		//set 'input' to the string of input text 
 		tokens = scanner.findtokens(input);

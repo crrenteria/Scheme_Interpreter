@@ -25,7 +25,7 @@ package frontend;
 			
 			while ( i < s.length() ) //until we run out of string
 			{
-				String temp = s.substring(i, s.length() ); //temp = substring beginning immediately after last token
+				String temp = s.substring(0, s.length() ); //temp = substring beginning immediately after last token
 				
 				if (temp.charAt(i) == '(' ) //opening a new list
 				{
@@ -36,7 +36,7 @@ package frontend;
 				else if (temp.charAt(i) == ')' ) //closing a list
 				{
 					tokens.add(")"); //add ")" to list of tokens
-					System.out.println("Token: ( \t Type: Special Symbol");
+					System.out.println("Token: ) \t Type: Special Symbol");
 					i++;
 				}
 				else if (Character.isDigit(temp.charAt(i)) ) //next token is a number
@@ -72,18 +72,14 @@ package frontend;
 					}
 					token = ""; //reset
 				}
-				//treat each comment and end-of-line character as blank
-				else if (temp.charAt(i) == '\n') //new line
-				{
-					i++;
-				}
 				else if (temp.charAt(i) == ';') //comment
 				{
-					//skip the rest of this line. move i to point to first character after comment
+					break;
+					/*//skip the rest of this line. move i to point to first character after comment
 					//we have to assume the comment is on its own line right?
 					while (temp.charAt(i) != '\n') {
 						i++;
-					}
+					}*/
 				}
 				else if (temp.charAt(i) == ' ') //whitespace
 				{

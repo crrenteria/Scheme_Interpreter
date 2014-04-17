@@ -12,18 +12,11 @@ public class InterpreterTest
 { 
 	public static void main(String[] args) throws IOException
 	{
-
-<<<<<<< HEAD
-		//Parser parser = new Parser();
-		//SchemeScanner scanner = new SchemeScanner();
-		//TreeWalker walker = new TreeWalker();
-=======
 		Parser parser = new Parser();
 		SchemeScanner scanner = new SchemeScanner();
 		TreeWalker walker = new TreeWalker();
->>>>>>> 65388be059b40e74ff7dac680003aa1a5af820e7
 		 
-		BufferedReader in = null;
+		/*BufferedReader in = null;
 		BufferedReader out = null;
 		
 		try {
@@ -42,7 +35,7 @@ public class InterpreterTest
 			if (out != null) {
 				out.close();
 			}
-		}
+		}*/
 		
 		//scanner scans
 		//parser parses
@@ -50,7 +43,9 @@ public class InterpreterTest
 		//backend navigates tree and hopefully prints the scheme it got in
 		
 		ArrayList<String> sample = new ArrayList<String>(); //tokens for a simple scheme program
-		sample.add("(");
+		String schemeInput = "((a b) c (d))";
+		parser.buildTokenList(schemeInput);
+		/*sample.add("(");
 		sample.add("define");
 		sample.add("proc");
 		sample.add("(");
@@ -89,5 +84,6 @@ public class InterpreterTest
 		
 		CodeTree sampleTree = new CodeTree();
 		sampleTree.printTree(sample);
+		*/
 	}
 }

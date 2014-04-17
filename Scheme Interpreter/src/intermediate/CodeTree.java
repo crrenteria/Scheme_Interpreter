@@ -21,8 +21,10 @@ public class CodeTree
 			head = new Node(null);
 			current = head;
 			int i = 1;
+			
 			while (i < tokens.size())
 			{
+				String token = tokens.get(i); //for debugging
 				if (tokens.get(i).equals("(")) //new sublist
 				{
 					current.leftChild = new Node(null); 

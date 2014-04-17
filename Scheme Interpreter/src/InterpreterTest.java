@@ -18,6 +18,7 @@ public class InterpreterTest
 		BufferedReader out = null;
 		ArrayList<String> parsed = new ArrayList<String>();
 		CodeTree tree = new CodeTree();
+		ArrayList<String> temp = new ArrayList<String>();
 		
 		try {
 			in = new BufferedReader(new FileReader("input.lisp"));
@@ -26,9 +27,11 @@ public class InterpreterTest
 
 			while ((line = in.readLine()) != null) {
 				System.out.println(line);
-				parsed = parser.buildTokenList(line);
+				 temp = parser.buildTokenList(line);
+				 parsed.addAll(temp);
 				
 			}
+			
 			tree.printTree(parsed);
 			
 		} 

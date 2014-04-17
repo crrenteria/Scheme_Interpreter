@@ -8,6 +8,11 @@ public class CodeTree
 	private Node current;
 	TreeWalker backend;
 	
+	public CodeTree()
+	{
+		backend = new TreeWalker();
+	}
+	
 	public Node makeTree(ArrayList<String> tokens)
 	{
 		//do stuff;

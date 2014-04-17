@@ -25,4 +25,24 @@ public class Node
 	{
 		return (rightChild != null);
 	}
+	
+	public String getValue()
+	{
+		return value; 
+	}
+	
+	public Node getParent()
+	{
+		return parent;
+	}
+	
+	public Node getLeftChild()
+	{
+		return leftChild;
+	}
+	
+	public Node getRightChild()
+	{
+		return rightChild;
+	}
 }

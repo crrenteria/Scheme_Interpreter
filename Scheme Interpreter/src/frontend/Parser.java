@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import intermediate.CodeTree;
 import intermediate.SymbolTable;
-
+import backend.TreeWalker;
 
 public class Parser 
 {
@@ -15,6 +15,7 @@ public class Parser
 	SchemeStuff reference; //lists of Scheme keywords and special symbols
 	CodeTree iCode; //binary tree for intermediate code
 	SymbolTable table; //symbol table to hold symbols
+	TreeWalker tw; 
 	
 	public Parser()
 	{
@@ -24,6 +25,7 @@ public class Parser
 		reference = new SchemeStuff();
 		iCode = new CodeTree();
 		table = new SymbolTable(); 
+		tw = new TreeWalker(); 
 	}
 	
 	public void buildTokenList()
@@ -69,8 +71,8 @@ public class Parser
 		}
 		else //every opened paren was closed
 		{
-			iCode.makeTree(tokens);
-			//table.display();
+			tw.printTable(table);
+			iCode.makeTree(tokens); //make parse tree. backend will automatically print
 		}
 	}
 	

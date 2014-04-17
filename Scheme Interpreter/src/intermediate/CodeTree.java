@@ -39,7 +39,11 @@ public class CodeTree
 						current = current.parent;
 						while (!(current.rightChild == null)) //until you get to an unfinished part of the tree
 						{
-							current = current.parent; //move up the tree
+							if(current.parent != null) //not the head
+							{
+								current = current.parent; //move up the tree
+							}
+							else return head;
 						}
 					
 						current.rightChild = new Node(null); //create new node on right to continue parsing.

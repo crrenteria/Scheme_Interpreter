@@ -1,3 +1,8 @@
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.IOException;
+
 import backend.TreeWalker;
 import frontend.*;
 import intermediate.*;
@@ -5,13 +10,40 @@ import java.util.ArrayList;
 
 public class InterpreterTest 
 { 
-	public static void main(String[] args)
+	public static void main(String[] args) throws IOException
 	{
 
+<<<<<<< HEAD
 		//Parser parser = new Parser();
 		//SchemeScanner scanner = new SchemeScanner();
 		//TreeWalker walker = new TreeWalker();
+=======
+		Parser parser = new Parser();
+		SchemeScanner scanner = new SchemeScanner();
+		TreeWalker walker = new TreeWalker();
+>>>>>>> 65388be059b40e74ff7dac680003aa1a5af820e7
 		 
+		BufferedReader in = null;
+		BufferedReader out = null;
+		
+		try {
+			in = new BufferedReader(new FileReader("input.lisp"));
+			out = new BufferedReader(new FileReader("output.txt"));
+			String line = null;
+
+			while ((line = in.readLine()) != null) {
+				parser.buildTokenList(line);
+			}
+		} 
+		finally {
+			if (in != null) {
+				in.close();
+			}
+			if (out != null) {
+				out.close();
+			}
+		}
+		
 		//scanner scans
 		//parser parses
 		//intermediate stuff is built

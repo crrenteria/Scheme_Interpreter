@@ -28,7 +28,7 @@ public class Parser
 		tw = new TreeWalker(); 
 	}
 	
-	public void buildTokenList()
+	public void buildTokenList(String input)
 	{
 		//set 'input' to the string of input text 
 		tokens = scanner.findtokens(input);

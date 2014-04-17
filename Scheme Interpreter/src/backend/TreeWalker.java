@@ -1,4 +1,5 @@
 package backend;
+import intermediate.*;
 
 public class TreeWalker {
 
@@ -6,5 +7,17 @@ public class TreeWalker {
 	//prints the actual lists with proper parentheses
 	
 	//print contents of symbol table in alphabetical order
+	
+	public void walkTree(Node n)
+	{
+		//preorder walk.
+		//sys.out.println stuff.
+		
+	}
+	
+	public void printTable(SymbolTable t)
+	{
+		t.printSorted();
+	}
 	
 }

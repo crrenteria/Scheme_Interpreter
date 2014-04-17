@@ -61,6 +61,17 @@ public class Parser
 				}
 			}
 		}
+		
+		if (openParens != 0) //uneven parens
+		{
+			//throw exception? I guess?
+			return;
+		}
+		else //every opened paren was closed
+		{
+			iCode.makeTree(tokens);
+			//table.display();
+		}
 	}
 	
 }

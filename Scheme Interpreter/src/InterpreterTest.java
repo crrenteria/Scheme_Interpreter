@@ -8,8 +8,8 @@ public class InterpreterTest
 	{
 
 		Parser parser = new Parser();
-		SchemeScanner scanner = new SchemeScanner();
-		TreeWalker walker = new TreeWalker();
+		//SchemeScanner scanner = new SchemeScanner();
+		//TreeWalker walker = new TreeWalker();
 		 
 		//scanner scans
 		//parser parses

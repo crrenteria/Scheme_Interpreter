@@ -34,7 +34,7 @@ public class CodeTree
 				}
 				else if (tokens.get(i).equals(")")) //closing sublist
 				{
-					if (i != tokens.size() -1) //last element in the list
+					if (i != tokens.size()-1) //last element in the list
 					{
 						current = current.parent;
 						while (!(current.rightChild == null)) //until you get to an unfinished part of the tree
@@ -45,7 +45,7 @@ public class CodeTree
 						current.rightChild = new Node(null); //create new node on right to continue parsing.
 						current.rightChild.parent = current;
 						current = current.rightChild;
-						}
+					}
 					i++;
 				}
 				else //next is a word / leaf

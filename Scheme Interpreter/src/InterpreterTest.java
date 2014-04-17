@@ -13,7 +13,7 @@ public class InterpreterTest
 	public static void main(String[] args) throws IOException
 	{
 		Parser parser = new Parser();
-		SchemeScanner scanner = new SchemeScanner();
+		//SchemeScanner scanner = new SchemeScanner();
 		TreeWalker walker = new TreeWalker();
 		 
 		/*BufferedReader in = null;
@@ -37,15 +37,19 @@ public class InterpreterTest
 			}
 		}*/
 		
+		String schemeInput = "( define proc ( lambda ( a b ) ( let ( ( sum ( - a ( func b ) ) ) ) sum ) ) )";
+		ArrayList<String> parsed = parser.buildTokenList(schemeInput);
+		
+		CodeTree tree = new CodeTree();
+		tree.printTree(parsed);
+		
 		//scanner scans
 		//parser parses
 		//intermediate stuff is built
 		//backend navigates tree and hopefully prints the scheme it got in
 		
-		ArrayList<String> sample = new ArrayList<String>(); //tokens for a simple scheme program
-		String schemeInput = "((a b) c (d))";
-		parser.buildTokenList(schemeInput);
-		/*sample.add("(");
+		/*ArrayList<String> sample = new ArrayList<String>(); //tokens for a simple scheme program
+		sample.add("(");
 		sample.add("define");
 		sample.add("proc");
 		sample.add("(");
@@ -83,7 +87,7 @@ public class InterpreterTest
 		//System.out.println("\n"+sample.get(0)); 
 		
 		CodeTree sampleTree = new CodeTree();
-		sampleTree.printTree(sample);
-		*/
+		sampleTree.printTree(sample);*/
+		
 	}
 }

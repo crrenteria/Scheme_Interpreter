@@ -58,6 +58,7 @@ public class TreeWalker {
 			if (nd.hasRightChild()) //if there's a right child
 			{
 				walk(nd.getRightChild()); //traverse right subtree
+				System.out.print(")");
 			}
 		}
 	}

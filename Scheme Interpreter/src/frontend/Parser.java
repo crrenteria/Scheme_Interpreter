@@ -28,10 +28,10 @@ public class Parser
 		tw = new TreeWalker(); 
 	}
 	
-	public void buildTokenList(String input)
+	public ArrayList<String> buildTokenList(String input)
 	{
 		//set 'input' to the string of input text 
-		tokens = scanner.findtokens(input);
+		return tokens = scanner.findtokens(input);
 	}
 	
 	public void parse()
